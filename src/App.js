@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import React, {useEffect} from "react"
+import Connection from "./components/connection";
+import GetOneUser from "../src/components/get-one-user"
 import './App.css';
+import "semantic-ui-css/semantic.min.css";
+import firebase from "./data/firebase";
+import CreatNewUser from "./components/create-new-user";
+import UpdateUser from "./components/update-user";
+import DeleteUser from "./components/delete-user";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <div>
+     <CreatNewUser />
+     </div>
+     <GetOneUser /> 
+     <Connection />
+     <div>
+       <UpdateUser />
+     </div>
+     <div>
+       <DeleteUser/>
+     </div>
+     
     </div>
   );
 }
